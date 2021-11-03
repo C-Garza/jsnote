@@ -56,3 +56,14 @@
 .wmde-markdown-color code[class*="language-"] {
   color: #D4D4D4;
 }
+.w-md-editor .tag, .wmde-markdown .tag {
+  padding: 0;
+  white-space: inherit;
+  background-color: transparent;
+  color: #0060c9;
+  display: inline;
+  height: auto;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: inherit;
+}

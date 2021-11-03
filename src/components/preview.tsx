@@ -8,7 +8,9 @@ interface PreviewProps {
 
 const html = `
 <html>
-  <head></head>
+  <head>
+    <style>html { background-color: white; }</style>
+  </head>
   <body>
     <div id="root"></div>
     <script>
@@ -38,16 +40,12 @@ const Preview = ({code, err}: PreviewProps): JSX.Element => {
   const iframeRef = useRef<any>();
 
   useEffect(() => {
-    if(!iframeRef.current) return;
-    
     iframeRef.current.srcdoc = html;
-  }, []);
-
-  useEffect(() => {
-    if(!iframeRef.current) return;
-
-    iframeRef.current.contentWindow.postMessage(code, "*");
   }, [code]);
+
+  const loadHandler = () => {
+    iframeRef.current.contentWindow.postMessage(code, "*");
+  };
 
   return (
     <div className="preview-wrapper">
@@ -56,6 +54,7 @@ const Preview = ({code, err}: PreviewProps): JSX.Element => {
         srcDoc={html} 
         title="preview" 
         sandbox="allow-scripts"
+        onLoad={loadHandler}
       />
       {err && <div className="preview-error">{err}</div>}
     </div>
