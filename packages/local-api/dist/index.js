@@ -1,9 +1,14 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.serve = void 0;
+var express_1 = __importDefault(require("express"));
 var serve = function (port, filename, dir) {
-    console.log("Serving traffic on port: ", port);
-    console.log("Saving/fetching cells from: ", filename);
-    console.log("File is in dir: ", dir);
+    var app = (0, express_1.default)();
+    app.listen(port, function () {
+        console.log("Listening on port: ", port);
+    });
 };
 exports.serve = serve;
