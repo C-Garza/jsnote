@@ -1,6 +1,6 @@
 {
   "name": "jsnote-cga",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "bin": "dist/index.js",
   "publishConfig": {
@@ -20,7 +20,7 @@
     "@jsnote-cga/local-client": "^1.0.1"
   },
   "devDependencies": {
-    "@jsnote-cga/local-api": "^1.0.1",
+    "@jsnote-cga/local-api": "^1.0.2",
     "@types/node": "^16.11.6",
     "commander": "^8.3.0",
     "esbuild": "0.8.26",
